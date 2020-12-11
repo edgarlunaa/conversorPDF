@@ -35,6 +35,8 @@ class Aplicacion (object):
             self.ui.btn_iniciar.setEnabled(False)
     
     def btn_iniciar_click(self):
+        if self.ui.cant_a_partir.value() == 0:
+            return
         if self.ui.cant_a_partir.value() - 1 + self.ui.cant_pag_a_recortar.value() >= int(self.ui.lbl_cant_pag.text()) + 1:
             return
         for i in range(self.ui.cant_pag_a_recortar.value()):
