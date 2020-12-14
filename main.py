@@ -1,21 +1,23 @@
 from PyPDF2 import PdfFileWriter, PdfFileReader
-import menu
+import Ui_main
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QApplication
+from PyQt5.QtWidgets import QApplication, QMessageBox
 import sys
 import os
 
-class MainUiClass (QtWidgets.QMainWindow, menu.Ui_MainWindow):
+class MainUiClass (QtWidgets.QMainWindow, Ui_main.Ui_MainWindow):
     def __init__(self, parent=None):
         super (MainUiClass, self).__init__(parent)
         self.setupUi(self)
 
-def extract_page(doc_name, page_num):
+def extract_page(doc_name, page_num_desde, page_num_hasta):
     pdf_reader = PdfFileReader(open(doc_name, 'rb'))
-    pdf_writer = PdfFileWriter()
-    pdf_writer.addPage(pdf_reader.getPage(page_num))
-    with open(f'document-page{page_num + 1}.pdf', 'wb') as doc_file:
-        pdf_writer.write(doc_file)
+    for i in range(page_num_desde, page_num_hasta, 2):
+        pdf_writer = PdfFileWriter()
+        pdf_writer.addPage(pdf_reader.getPage(page_num_desde + i))
+        pdf_writer.addPage(pdf_reader.getPage(page_num_desde + i + 1))
+        with open(f'documentos1\document-page {page_num_desde + i + 1} y {page_num_desde + i + 2}.pdf', 'wb') as doc_file:
+            pdf_writer.write(doc_file)
 
 class Aplicacion (object):
     def __init__(self, ui):
@@ -39,9 +41,18 @@ class Aplicacion (object):
             return
         if self.ui.cant_a_partir.value() - 1 + self.ui.cant_pag_a_recortar.value() >= int(self.ui.lbl_cant_pag.text()) + 1:
             return
-        for i in range(self.ui.cant_pag_a_recortar.value()):
-            pagina = self.ui.cant_a_partir.value() - 1 + i
-            extract_page(self.ui.lbl_pdf.text(), pagina)
+
+        os.system("mkdir documentos1")
+
+        pagina = self.ui.cant_a_partir.value() - 1
+        pagina_hasta = self.ui.cant_pag_a_recortar.value()
+        extract_page(self.ui.lbl_pdf.text(), pagina, pagina_hasta)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setText("Proceso terminado con éxito.")
+        msg.setWindowTitle("Información")
+        msg.exec_()
 
 def main():
     app = QApplication.instance()
