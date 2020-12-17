@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Git\python\conversorPDF\main.ui'
+# Form implementation generated from reading ui file 'e:\git\python\conversorPDF\main.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.1
 #
@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(440, 252)
+        MainWindow.resize(442, 321)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.btn_pdf = QtWidgets.QPushButton(self.centralwidget)
@@ -34,6 +34,8 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.cant_a_partir.setFont(font)
+        self.cant_a_partir.setMinimum(1)
+        self.cant_a_partir.setMaximum(99999)
         self.cant_a_partir.setProperty("value", 1)
         self.cant_a_partir.setObjectName("cant_a_partir")
         self.lbl_cant_pag = QtWidgets.QLabel(self.centralwidget)
@@ -59,10 +61,11 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.cant_pag_a_recortar.setFont(font)
+        self.cant_pag_a_recortar.setMinimum(1)
         self.cant_pag_a_recortar.setMaximum(99999)
         self.cant_pag_a_recortar.setObjectName("cant_pag_a_recortar")
         self.btn_iniciar = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_iniciar.setGeometry(QtCore.QRect(280, 180, 150, 40))
+        self.btn_iniciar.setGeometry(QtCore.QRect(280, 250, 150, 40))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.btn_iniciar.setFont(font)
@@ -79,6 +82,29 @@ class Ui_MainWindow(object):
         font.setPointSize(12)
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
+        self.lbl_pag_a_recortar_2 = QtWidgets.QLabel(self.centralwidget)
+        self.lbl_pag_a_recortar_2.setGeometry(QtCore.QRect(10, 170, 210, 30))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.lbl_pag_a_recortar_2.setFont(font)
+        self.lbl_pag_a_recortar_2.setObjectName("lbl_pag_a_recortar_2")
+        self.cant_intervalo = QtWidgets.QSpinBox(self.centralwidget)
+        self.cant_intervalo.setGeometry(QtCore.QRect(340, 170, 90, 30))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.cant_intervalo.setFont(font)
+        self.cant_intervalo.setMinimum(1)
+        self.cant_intervalo.setMaximum(99999)
+        self.cant_intervalo.setObjectName("cant_intervalo")
+        self.lbl_pag_a_recortar_3 = QtWidgets.QLabel(self.centralwidget)
+        self.lbl_pag_a_recortar_3.setGeometry(QtCore.QRect(10, 210, 160, 30))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.lbl_pag_a_recortar_3.setFont(font)
+        self.lbl_pag_a_recortar_3.setObjectName("lbl_pag_a_recortar_3")
+        self.txt_carpeta = QtWidgets.QLineEdit(self.centralwidget)
+        self.txt_carpeta.setGeometry(QtCore.QRect(170, 210, 260, 30))
+        self.txt_carpeta.setObjectName("txt_carpeta")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusBar = QtWidgets.QStatusBar(MainWindow)
         self.statusBar.setObjectName("statusBar")
@@ -98,3 +124,6 @@ class Ui_MainWindow(object):
         self.btn_iniciar.setText(_translate("MainWindow", "Iniciar recorte"))
         self.label.setText(_translate("MainWindow", "El PDF contiene"))
         self.label_2.setText(_translate("MainWindow", "páginas"))
+        self.lbl_pag_a_recortar_2.setText(_translate("MainWindow", "Intérvalo"))
+        self.lbl_pag_a_recortar_3.setText(_translate("MainWindow", "Nombre de la carpeta"))
+        self.txt_carpeta.setPlaceholderText(_translate("MainWindow", "Nombre de la carpeta sin simbolos"))
