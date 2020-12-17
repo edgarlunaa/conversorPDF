@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>442</width>
-    <height>321</height>
+    <width>481</width>
+    <height>515</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>481</width>
+    <height>451</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>99999</width>
+    <height>99999</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Dividir PDF</string>
@@ -49,11 +61,14 @@
     <property name="text">
      <string>Ubicación del pdf</string>
     </property>
+    <property name="buddy">
+     <cstring>btn_pdf</cstring>
+    </property>
    </widget>
    <widget class="QSpinBox" name="cant_a_partir">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>380</x>
       <y>90</y>
       <width>90</width>
       <height>30</height>
@@ -109,6 +124,9 @@
     <property name="text">
      <string>Páginas a recortar</string>
     </property>
+    <property name="buddy">
+     <cstring>cant_pag_a_recortar</cstring>
+    </property>
    </widget>
    <widget class="QLabel" name="lbl_a_partir">
     <property name="geometry">
@@ -127,11 +145,14 @@
     <property name="text">
      <string>A partir de cual página va a recortar</string>
     </property>
+    <property name="buddy">
+     <cstring>cant_a_partir</cstring>
+    </property>
    </widget>
    <widget class="QSpinBox" name="cant_pag_a_recortar">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>380</x>
       <y>130</y>
       <width>90</width>
       <height>30</height>
@@ -152,8 +173,8 @@
    <widget class="QPushButton" name="btn_iniciar">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>250</y>
+      <x>320</x>
+      <y>450</y>
       <width>150</width>
       <height>40</height>
      </rect>
@@ -220,11 +241,14 @@
     <property name="text">
      <string>Intérvalo</string>
     </property>
+    <property name="buddy">
+     <cstring>cant_intervalo</cstring>
+    </property>
    </widget>
    <widget class="QSpinBox" name="cant_intervalo">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>380</x>
       <y>170</y>
       <width>90</width>
       <height>30</height>
@@ -247,7 +271,7 @@
      <rect>
       <x>10</x>
       <y>210</y>
-      <width>160</width>
+      <width>200</width>
       <height>30</height>
      </rect>
     </property>
@@ -259,11 +283,14 @@
     <property name="text">
      <string>Nombre de la carpeta</string>
     </property>
+    <property name="buddy">
+     <cstring>txt_carpeta</cstring>
+    </property>
    </widget>
    <widget class="QLineEdit" name="txt_carpeta">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>210</x>
       <y>210</y>
       <width>260</width>
       <height>30</height>
@@ -273,9 +300,157 @@
      <string>Nombre de la carpeta sin simbolos</string>
     </property>
    </widget>
+   <widget class="QLabel" name="lbl_pag_a_recortar_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>250</y>
+      <width>290</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Cantidad de archivos a generar:</string>
+    </property>
+    <property name="buddy">
+     <cstring>txt_carpeta</cstring>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_cantidad_archivos">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>251</y>
+      <width>110</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chkBox_excel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>284</y>
+      <width>460</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Los nombres de los archivos vienen de un excel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_excel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>336</y>
+      <width>110</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Cargar Excel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_excel">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>346</y>
+      <width>340</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Ubicación del excel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_pag_a_recortar_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>390</y>
+      <width>310</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Cantidad de nombres en el excel:</string>
+    </property>
+    <property name="buddy">
+     <cstring>txt_carpeta</cstring>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_cantidad_nombres">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>390</y>
+      <width>110</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
+ <tabstops>
+  <tabstop>btn_pdf</tabstop>
+  <tabstop>cant_a_partir</tabstop>
+  <tabstop>cant_pag_a_recortar</tabstop>
+  <tabstop>cant_intervalo</tabstop>
+  <tabstop>txt_carpeta</tabstop>
+  <tabstop>chkBox_excel</tabstop>
+  <tabstop>btn_excel</tabstop>
+  <tabstop>btn_iniciar</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
