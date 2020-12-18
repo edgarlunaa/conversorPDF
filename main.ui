@@ -6,39 +6,73 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>481</width>
-    <height>515</height>
+    <width>501</width>
+    <height>521</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>481</width>
-    <height>451</height>
+    <width>501</width>
+    <height>521</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>99999</width>
-    <height>99999</height>
+    <width>501</width>
+    <height>521</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Dividir PDF</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:#258039;color:#231b1;font-family:Helvetica</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="btn_pdf">
     <property name="geometry">
      <rect>
-      <x>8</x>
-      <y>10</y>
+      <x>18</x>
+      <y>15</y>
       <width>120</width>
       <height>40</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>12</pointsize>
+      <family>Arial</family>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#btn_pdf{
+	box-shadow:inset 0px 1px 0px 0px #a4e271;
+	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+	background-color:#89c403;
+	border-radius:6px;
+	border:1px solid #74b807;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528009;
+}
+QPushButton#btn_pdf:hover {
+	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+	background-color:#77a809;
+}
+QPushButton#btn_pdf:pressed {
+	position:relative;
+	top:1px;
+	border-style: inset;
+}</string>
     </property>
     <property name="text">
      <string>Cargar PDF</string>
@@ -47,14 +81,15 @@
    <widget class="QLabel" name="lbl_pdf">
     <property name="geometry">
      <rect>
-      <x>135</x>
-      <y>17</y>
+      <x>145</x>
+      <y>22</y>
       <width>410</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Helvetica</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -68,14 +103,15 @@
    <widget class="QSpinBox" name="cant_a_partir">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>90</y>
+      <x>390</x>
+      <y>96</y>
       <width>90</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Helvetica</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -92,14 +128,15 @@
    <widget class="QLabel" name="lbl_cant_pag">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>53</y>
+      <x>170</x>
+      <y>59</y>
       <width>90</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Helvetica</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -107,17 +144,18 @@
      <string>x</string>
     </property>
    </widget>
-   <widget class="QLabel" name="lbl_pag_a_recortar">
+   <widget class="QLabel" name="lbl_1">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>130</y>
+      <x>20</x>
+      <y>136</y>
       <width>210</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Helvetica</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -131,14 +169,15 @@
    <widget class="QLabel" name="lbl_a_partir">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>90</y>
+      <x>20</x>
+      <y>96</y>
       <width>330</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Helvetica</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -152,14 +191,15 @@
    <widget class="QSpinBox" name="cant_pag_a_recortar">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>130</y>
+      <x>390</x>
+      <y>136</y>
       <width>90</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Helvetica</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -173,16 +213,47 @@
    <widget class="QPushButton" name="btn_iniciar">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>450</y>
+      <x>330</x>
+      <y>456</y>
       <width>150</width>
       <height>40</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>12</pointsize>
+      <family>Arial</family>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#btn_iniciar{
+	box-shadow:inset 0px 1px 0px 0px #a4e271;
+	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+	background-color:#89c403;
+	border-radius:6px;
+	border:1px solid #74b807;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528009;
+}
+QPushButton#btn_iniciar:hover {
+	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+	background-color:#77a809;
+}
+QPushButton#btn_iniciar:pressed {
+	position:relative;
+	top:1px;
+	border-style: inset;
+}</string>
     </property>
     <property name="text">
      <string>Iniciar recorte</string>
@@ -191,14 +262,15 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>60</y>
+      <x>20</x>
+      <y>66</y>
       <width>150</width>
       <height>16</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Helvetica</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -209,14 +281,15 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>52</y>
+      <x>260</x>
+      <y>58</y>
       <width>111</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Helvetica</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -224,17 +297,18 @@
      <string>páginas</string>
     </property>
    </widget>
-   <widget class="QLabel" name="lbl_pag_a_recortar_2">
+   <widget class="QLabel" name="lbl_2">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>170</y>
+      <x>20</x>
+      <y>176</y>
       <width>210</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Helvetica</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -248,14 +322,15 @@
    <widget class="QSpinBox" name="cant_intervalo">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>170</y>
+      <x>390</x>
+      <y>176</y>
       <width>90</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Helvetica</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -266,17 +341,18 @@
      <number>99999</number>
     </property>
    </widget>
-   <widget class="QLabel" name="lbl_pag_a_recortar_3">
+   <widget class="QLabel" name="lbl_3">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>210</y>
+      <x>20</x>
+      <y>216</y>
       <width>200</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Helvetica</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -290,27 +366,31 @@
    <widget class="QLineEdit" name="txt_carpeta">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>210</y>
+      <x>220</x>
+      <y>216</y>
       <width>260</width>
       <height>30</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#68A225</string>
     </property>
     <property name="placeholderText">
      <string>Nombre de la carpeta sin simbolos</string>
     </property>
    </widget>
-   <widget class="QLabel" name="lbl_pag_a_recortar_4">
+   <widget class="QLabel" name="lbl_4">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>250</y>
+      <x>20</x>
+      <y>256</y>
       <width>290</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Helvetica</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -324,14 +404,15 @@
    <widget class="QLabel" name="lbl_cantidad_archivos">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>251</y>
+      <x>370</x>
+      <y>257</y>
       <width>110</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Helvetica</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -345,14 +426,15 @@
    <widget class="QCheckBox" name="chkBox_excel">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>284</y>
+      <x>20</x>
+      <y>290</y>
       <width>460</width>
       <height>40</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Helvetica</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -363,16 +445,47 @@
    <widget class="QPushButton" name="btn_excel">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>336</y>
+      <x>20</x>
+      <y>342</y>
       <width>110</width>
       <height>40</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <family>Arial</family>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#btn_excel{
+	box-shadow:inset 0px 1px 0px 0px #a4e271;
+	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+	background-color:#89c403;
+	border-radius:6px;
+	border:1px solid #74b807;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528009;
+}
+QPushButton#btn_excel:hover {
+	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+	background-color:#77a809;
+}
+QPushButton#btn_excel:pressed {
+	position:relative;
+	top:1px;
+	border-style: inset;
+}</string>
     </property>
     <property name="text">
      <string>Cargar Excel</string>
@@ -381,14 +494,15 @@
    <widget class="QLabel" name="lbl_excel">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>346</y>
+      <x>140</x>
+      <y>352</y>
       <width>340</width>
       <height>20</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Helvetica</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -396,17 +510,18 @@
      <string>Ubicación del excel</string>
     </property>
    </widget>
-   <widget class="QLabel" name="lbl_pag_a_recortar_5">
+   <widget class="QLabel" name="lbl_5">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>390</y>
+      <x>20</x>
+      <y>396</y>
       <width>310</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Helvetica</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -420,22 +535,42 @@
    <widget class="QLabel" name="lbl_cantidad_nombres">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>390</y>
+      <x>370</x>
+      <y>396</y>
       <width>110</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Helvetica</family>
       <pointsize>12</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_warnings">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>451</y>
+      <width>300</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-family:Courier New</string>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
