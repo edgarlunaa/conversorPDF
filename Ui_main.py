@@ -17,23 +17,65 @@ class Ui_MainWindow(object):
         MainWindow.resize(501, 521)
         MainWindow.setMinimumSize(QtCore.QSize(501, 521))
         MainWindow.setMaximumSize(QtCore.QSize(501, 521))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("C:/Users/edgar/Downloads/1485481179-20_78631.ico"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        MainWindow.setWindowIcon(icon)
+        MainWindow.setWindowOpacity(1.0)
+        MainWindow.setStyleSheet("background-color: #ffffff;\n"
+"color:#231b1;\n"
+"font-family:Helvetica")
+        MainWindow.setToolButtonStyle(QtCore.Qt.ToolButtonIconOnly)
+        MainWindow.setAnimated(True)
+        MainWindow.setTabShape(QtWidgets.QTabWidget.Rounded)
+        MainWindow.setUnifiedTitleAndToolBarOnMac(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.btn_pdf = QtWidgets.QPushButton(self.centralwidget)
         self.btn_pdf.setGeometry(QtCore.QRect(18, 15, 120, 40))
         font = QtGui.QFont()
-        font.setPointSize(12)
+        font.setFamily("Arial")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setUnderline(False)
+        font.setWeight(75)
+        font.setStrikeOut(False)
         self.btn_pdf.setFont(font)
+        self.btn_pdf.setStyleSheet("QPushButton#btn_pdf{\n"
+"    box-shadow:inset 0px 1px 0px 0px #a4e271;\n"
+"    background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);\n"
+"    background-color:#89c403;\n"
+"    border-radius:6px;\n"
+"    border:1px solid #74b807;\n"
+"    display:inline-block;\n"
+"    cursor:pointer;\n"
+"    color:#ffffff;\n"
+"    font-family:Arial;\n"
+"    font-size:15px;\n"
+"    font-weight:bold;\n"
+"    text-decoration:none;\n"
+"    text-shadow:0px 1px 0px #528009;\n"
+"}\n"
+"QPushButton#btn_pdf:hover {\n"
+"    background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);\n"
+"    background-color:#77a809;\n"
+"}\n"
+"QPushButton#btn_pdf:pressed {\n"
+"    position:relative;\n"
+"    top:1px;\n"
+"    border-style: inset;\n"
+"}")
         self.btn_pdf.setObjectName("btn_pdf")
         self.lbl_pdf = QtWidgets.QLabel(self.centralwidget)
         self.lbl_pdf.setGeometry(QtCore.QRect(145, 22, 410, 30))
         font = QtGui.QFont()
+        font.setFamily("Helvetica")
         font.setPointSize(12)
         self.lbl_pdf.setFont(font)
         self.lbl_pdf.setObjectName("lbl_pdf")
         self.cant_a_partir = QtWidgets.QSpinBox(self.centralwidget)
-        self.cant_a_partir.setGeometry(QtCore.QRect(390, 95, 90, 30))
+        self.cant_a_partir.setGeometry(QtCore.QRect(390, 96, 90, 30))
         font = QtGui.QFont()
+        font.setFamily("Helvetica")
         font.setPointSize(12)
         self.cant_a_partir.setFont(font)
         self.cant_a_partir.setMinimum(1)
@@ -41,120 +83,209 @@ class Ui_MainWindow(object):
         self.cant_a_partir.setProperty("value", 1)
         self.cant_a_partir.setObjectName("cant_a_partir")
         self.lbl_cant_pag = QtWidgets.QLabel(self.centralwidget)
-        self.lbl_cant_pag.setGeometry(QtCore.QRect(170, 58, 90, 30))
+        self.lbl_cant_pag.setGeometry(QtCore.QRect(170, 59, 90, 30))
         font = QtGui.QFont()
+        font.setFamily("Helvetica")
         font.setPointSize(12)
         self.lbl_cant_pag.setFont(font)
         self.lbl_cant_pag.setObjectName("lbl_cant_pag")
         self.lbl_1 = QtWidgets.QLabel(self.centralwidget)
-        self.lbl_1.setGeometry(QtCore.QRect(20, 135, 210, 30))
+        self.lbl_1.setGeometry(QtCore.QRect(20, 136, 210, 30))
         font = QtGui.QFont()
+        font.setFamily("Helvetica")
         font.setPointSize(12)
         self.lbl_1.setFont(font)
         self.lbl_1.setObjectName("lbl_1")
         self.lbl_a_partir = QtWidgets.QLabel(self.centralwidget)
-        self.lbl_a_partir.setGeometry(QtCore.QRect(20, 95, 330, 30))
+        self.lbl_a_partir.setGeometry(QtCore.QRect(20, 96, 330, 30))
         font = QtGui.QFont()
+        font.setFamily("Helvetica")
         font.setPointSize(12)
         self.lbl_a_partir.setFont(font)
         self.lbl_a_partir.setObjectName("lbl_a_partir")
         self.cant_pag_a_recortar = QtWidgets.QSpinBox(self.centralwidget)
-        self.cant_pag_a_recortar.setGeometry(QtCore.QRect(390, 135, 90, 30))
+        self.cant_pag_a_recortar.setGeometry(QtCore.QRect(390, 136, 90, 30))
         font = QtGui.QFont()
+        font.setFamily("Helvetica")
         font.setPointSize(12)
         self.cant_pag_a_recortar.setFont(font)
         self.cant_pag_a_recortar.setMinimum(1)
         self.cant_pag_a_recortar.setMaximum(99999)
         self.cant_pag_a_recortar.setObjectName("cant_pag_a_recortar")
         self.btn_iniciar = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_iniciar.setGeometry(QtCore.QRect(330, 455, 150, 40))
+        self.btn_iniciar.setGeometry(QtCore.QRect(330, 456, 150, 40))
         font = QtGui.QFont()
-        font.setPointSize(12)
+        font.setFamily("Arial")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setUnderline(False)
+        font.setWeight(75)
+        font.setStrikeOut(False)
         self.btn_iniciar.setFont(font)
+        self.btn_iniciar.setStyleSheet("QPushButton#btn_iniciar{\n"
+"    box-shadow:inset 0px 1px 0px 0px #a4e271;\n"
+"    background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);\n"
+"    background-color:#89c403;\n"
+"    border-radius:6px;\n"
+"    border:1px solid #74b807;\n"
+"    display:inline-block;\n"
+"    cursor:pointer;\n"
+"    color:#ffffff;\n"
+"    font-family:Arial;\n"
+"    font-size:15px;\n"
+"    font-weight:bold;\n"
+"    text-decoration:none;\n"
+"    text-shadow:0px 1px 0px #528009;\n"
+"}\n"
+"QPushButton#btn_iniciar:hover {\n"
+"    background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);\n"
+"    background-color:#77a809;\n"
+"}\n"
+"QPushButton#btn_iniciar:pressed {\n"
+"    position:relative;\n"
+"    top:1px;\n"
+"    border-style: inset;\n"
+"}\n"
+"QPushButton#btn_iniciar:disabled {\n"
+"    background-color:#687a40;\n"
+"    border:1px solid #4f5c32;\n"
+"}")
         self.btn_iniciar.setObjectName("btn_iniciar")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(20, 65, 150, 16))
+        self.label.setGeometry(QtCore.QRect(20, 66, 150, 16))
         font = QtGui.QFont()
+        font.setFamily("Helvetica")
         font.setPointSize(12)
         self.label.setFont(font)
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(260, 57, 111, 31))
+        self.label_2.setGeometry(QtCore.QRect(260, 58, 111, 31))
         font = QtGui.QFont()
+        font.setFamily("Helvetica")
         font.setPointSize(12)
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
         self.lbl_2 = QtWidgets.QLabel(self.centralwidget)
-        self.lbl_2.setGeometry(QtCore.QRect(20, 175, 210, 30))
+        self.lbl_2.setGeometry(QtCore.QRect(20, 176, 210, 30))
         font = QtGui.QFont()
+        font.setFamily("Helvetica")
         font.setPointSize(12)
         self.lbl_2.setFont(font)
         self.lbl_2.setObjectName("lbl_2")
         self.cant_intervalo = QtWidgets.QSpinBox(self.centralwidget)
-        self.cant_intervalo.setGeometry(QtCore.QRect(390, 175, 90, 30))
+        self.cant_intervalo.setGeometry(QtCore.QRect(390, 176, 90, 30))
         font = QtGui.QFont()
+        font.setFamily("Helvetica")
         font.setPointSize(12)
         self.cant_intervalo.setFont(font)
         self.cant_intervalo.setMinimum(1)
         self.cant_intervalo.setMaximum(99999)
         self.cant_intervalo.setObjectName("cant_intervalo")
         self.lbl_3 = QtWidgets.QLabel(self.centralwidget)
-        self.lbl_3.setGeometry(QtCore.QRect(20, 215, 200, 30))
+        self.lbl_3.setGeometry(QtCore.QRect(20, 216, 200, 30))
         font = QtGui.QFont()
+        font.setFamily("Helvetica")
         font.setPointSize(12)
         self.lbl_3.setFont(font)
         self.lbl_3.setObjectName("lbl_3")
         self.txt_carpeta = QtWidgets.QLineEdit(self.centralwidget)
-        self.txt_carpeta.setGeometry(QtCore.QRect(220, 215, 260, 30))
+        self.txt_carpeta.setGeometry(QtCore.QRect(220, 216, 260, 30))
+        self.txt_carpeta.setStyleSheet("background-color:#ededed")
         self.txt_carpeta.setObjectName("txt_carpeta")
         self.lbl_4 = QtWidgets.QLabel(self.centralwidget)
-        self.lbl_4.setGeometry(QtCore.QRect(20, 255, 290, 30))
+        self.lbl_4.setGeometry(QtCore.QRect(20, 256, 290, 30))
         font = QtGui.QFont()
+        font.setFamily("Helvetica")
         font.setPointSize(12)
         self.lbl_4.setFont(font)
         self.lbl_4.setObjectName("lbl_4")
         self.lbl_cantidad_archivos = QtWidgets.QLabel(self.centralwidget)
-        self.lbl_cantidad_archivos.setGeometry(QtCore.QRect(370, 256, 110, 30))
+        self.lbl_cantidad_archivos.setGeometry(QtCore.QRect(370, 257, 110, 30))
         font = QtGui.QFont()
+        font.setFamily("Helvetica")
         font.setPointSize(12)
         self.lbl_cantidad_archivos.setFont(font)
         self.lbl_cantidad_archivos.setText("")
         self.lbl_cantidad_archivos.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.lbl_cantidad_archivos.setObjectName("lbl_cantidad_archivos")
         self.chkBox_excel = QtWidgets.QCheckBox(self.centralwidget)
-        self.chkBox_excel.setGeometry(QtCore.QRect(20, 289, 460, 40))
+        self.chkBox_excel.setGeometry(QtCore.QRect(20, 290, 460, 40))
         font = QtGui.QFont()
+        font.setFamily("Helvetica")
         font.setPointSize(12)
         self.chkBox_excel.setFont(font)
         self.chkBox_excel.setObjectName("chkBox_excel")
         self.btn_excel = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_excel.setGeometry(QtCore.QRect(20, 341, 110, 40))
+        self.btn_excel.setGeometry(QtCore.QRect(20, 342, 110, 40))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setFamily("Arial")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setUnderline(False)
+        font.setWeight(75)
+        font.setStrikeOut(False)
         self.btn_excel.setFont(font)
+        self.btn_excel.setStyleSheet("QPushButton#btn_excel{\n"
+"    box-shadow:inset 0px 1px 0px 0px #a4e271;\n"
+"    background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);\n"
+"    background-color:#89c403;\n"
+"    border-radius:6px;\n"
+"    border:1px solid #74b807;\n"
+"    display:inline-block;\n"
+"    cursor:pointer;\n"
+"    color:#ffffff;\n"
+"    font-family:Arial;\n"
+"    font-size:15px;\n"
+"    font-weight:bold;\n"
+"    text-decoration:none;\n"
+"    text-shadow:0px 1px 0px #528009;\n"
+"}\n"
+"QPushButton#btn_excel:hover {\n"
+"    background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);\n"
+"    background-color:#77a809;\n"
+"}\n"
+"QPushButton#btn_excel:pressed {\n"
+"    position:relative;\n"
+"    top:1px;\n"
+"    border-style: inset;\n"
+"}\n"
+"QPushButton#btn_excel:disabled {\n"
+"    background-color:#687a40;\n"
+"    border:1px solid #4f5c32;\n"
+"}")
         self.btn_excel.setObjectName("btn_excel")
         self.lbl_excel = QtWidgets.QLabel(self.centralwidget)
-        self.lbl_excel.setGeometry(QtCore.QRect(140, 351, 340, 20))
+        self.lbl_excel.setGeometry(QtCore.QRect(140, 352, 340, 20))
         font = QtGui.QFont()
+        font.setFamily("Helvetica")
         font.setPointSize(12)
         self.lbl_excel.setFont(font)
         self.lbl_excel.setObjectName("lbl_excel")
         self.lbl_5 = QtWidgets.QLabel(self.centralwidget)
-        self.lbl_5.setGeometry(QtCore.QRect(20, 395, 310, 30))
+        self.lbl_5.setGeometry(QtCore.QRect(20, 396, 310, 30))
         font = QtGui.QFont()
+        font.setFamily("Helvetica")
         font.setPointSize(12)
         self.lbl_5.setFont(font)
         self.lbl_5.setObjectName("lbl_5")
         self.lbl_cantidad_nombres = QtWidgets.QLabel(self.centralwidget)
-        self.lbl_cantidad_nombres.setGeometry(QtCore.QRect(370, 395, 110, 30))
+        self.lbl_cantidad_nombres.setGeometry(QtCore.QRect(370, 396, 110, 30))
         font = QtGui.QFont()
+        font.setFamily("Helvetica")
         font.setPointSize(12)
         self.lbl_cantidad_nombres.setFont(font)
+        self.lbl_cantidad_nombres.setStyleSheet("")
         self.lbl_cantidad_nombres.setText("")
         self.lbl_cantidad_nombres.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.lbl_cantidad_nombres.setObjectName("lbl_cantidad_nombres")
         self.lbl_warnings = QtWidgets.QLabel(self.centralwidget)
-        self.lbl_warnings.setGeometry(QtCore.QRect(20, 450, 300, 40))
+        self.lbl_warnings.setGeometry(QtCore.QRect(20, 430, 300, 70))
+        font = QtGui.QFont()
+        font.setFamily("Courier New")
+        font.setPointSize(8)
+        font.setItalic(True)
+        self.lbl_warnings.setFont(font)
+        self.lbl_warnings.setStyleSheet("font-family:Courier New")
         self.lbl_warnings.setText("")
         self.lbl_warnings.setObjectName("lbl_warnings")
         MainWindow.setCentralWidget(self.centralwidget)
@@ -195,6 +326,7 @@ class Ui_MainWindow(object):
         self.txt_carpeta.setPlaceholderText(_translate("MainWindow", "Nombre de la carpeta sin simbolos"))
         self.lbl_4.setText(_translate("MainWindow", "Cantidad de archivos a generar:"))
         self.chkBox_excel.setText(_translate("MainWindow", "Los nombres de los archivos vienen de un excel"))
+        self.btn_excel.setToolTip(_translate("MainWindow", "<html><head/><body><p>Los nombres deben de estar en la primera columna del excel sin \'\\\'.</p><p>Ejemplos que no se admiten: <span style=\" font-weight:600;\">\'12/12/2020\'; \':*?&lt;&gt;|\'; \'.algo\';</span></p><p>Si se admiten fechas del formato: <span style=\" font-style:italic;\">\'25-06-1997\'.</span></p><p><span style=\" font-weight:600; text-decoration: underline;\">Los nombres de los archivos deben ser diferentres entre sí.</span></p></body></html>"))
         self.btn_excel.setText(_translate("MainWindow", "Cargar Excel"))
         self.lbl_excel.setText(_translate("MainWindow", "Ubicación del excel"))
         self.lbl_5.setText(_translate("MainWindow", "Cantidad de nombres en el excel:"))

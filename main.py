@@ -73,7 +73,7 @@ class Aplicacion (object):
             if int(self.ui.lbl_cantidad_nombres.text()) < int(self.ui.lbl_cantidad_archivos.text()):
                 self.ui.btn_iniciar.setEnabled(False)
             elif int(self.ui.lbl_cantidad_nombres.text()) > int(self.ui.lbl_cantidad_archivos.text()):
-                self.ui.lbl_warnings.setText("⚠¡Atención la cantidad de nombres recibidos por \nexcel excede a la cantidad de archivos a generar!⚠")
+                self.ui.lbl_warnings.setText("⚠¡Atención la cantidad de nombres\ningresados por excel excede a la \ncantidad de archivos a generar!⚠")
                 self.ui.btn_iniciar.setEnabled(True)
 
     def btn_pdf_click(self):

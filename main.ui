@@ -25,8 +25,30 @@
   <property name="windowTitle">
    <string>Dividir PDF</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>C:/Users/edgar/Downloads/1485481179-20_78631.ico</normalon>
+   </iconset>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
+  </property>
   <property name="styleSheet">
-   <string notr="true">background-color:#258039;color:#231b1;font-family:Helvetica</string>
+   <string notr="true">background-color: #ffffff;
+color:#231b1;
+font-family:Helvetica</string>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="btn_pdf">
@@ -253,6 +275,10 @@ QPushButton#btn_iniciar:pressed {
 	position:relative;
 	top:1px;
 	border-style: inset;
+}
+QPushButton#btn_iniciar:disabled {
+	background-color:#687a40;
+	border:1px solid #4f5c32;
 }</string>
     </property>
     <property name="text">
@@ -373,7 +399,7 @@ QPushButton#btn_iniciar:pressed {
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:#68A225</string>
+     <string notr="true">background-color:#ededed</string>
     </property>
     <property name="placeholderText">
      <string>Nombre de la carpeta sin simbolos</string>
@@ -461,6 +487,9 @@ QPushButton#btn_iniciar:pressed {
       <strikeout>false</strikeout>
      </font>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Los nombres deben de estar en la primera columna del excel sin '\'.&lt;/p&gt;&lt;p&gt;Ejemplos que no se admiten: &lt;span style=&quot; font-weight:600;&quot;&gt;'12/12/2020'; ':*?&amp;lt;&amp;gt;|'; '.algo';&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Si se admiten fechas del formato: &lt;span style=&quot; font-style:italic;&quot;&gt;'25-06-1997'.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Los nombres de los archivos deben ser diferentres entre sí.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton#btn_excel{
 	box-shadow:inset 0px 1px 0px 0px #a4e271;
@@ -485,6 +514,10 @@ QPushButton#btn_excel:pressed {
 	position:relative;
 	top:1px;
 	border-style: inset;
+}
+QPushButton#btn_excel:disabled {
+	background-color:#687a40;
+	border:1px solid #4f5c32;
 }</string>
     </property>
     <property name="text">
@@ -561,10 +594,17 @@ QPushButton#btn_excel:pressed {
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>451</y>
+      <y>430</y>
       <width>300</width>
-      <height>40</height>
+      <height>70</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Courier New</family>
+      <pointsize>8</pointsize>
+      <italic>true</italic>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">font-family:Courier New</string>
