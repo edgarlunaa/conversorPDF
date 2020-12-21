@@ -12,7 +12,7 @@ class MainUiClass (QtWidgets.QMainWindow, Ui_main.Ui_MainWindow):
         self.setupUi(self)
 
 def extract_page(doc_name, page_num_desde, page_num_hasta, intervalo, nombre_carpeta, nombres_desde_excel):
-    os.system("mkdir " + nombre_carpeta)
+    os.system('mkdir \"' + nombre_carpeta + '\"')
     pdf_reader = PdfFileReader(open(doc_name, 'rb'))
     index_nombre = -1
     pagina_actual = page_num_desde
