@@ -52,7 +52,21 @@ def extract_page(doc_name, page_num_desde, page_num_hasta, intervalo, nombre_car
 class Aplicacion (object):
     def __init__(self, ui):
         self.ui = ui
-    
+
+    def btn_arriba_click(self):
+        seleccionado = self.ui.listWidget.currentRow()
+        if seleccionado != 0:
+            self.lista_pdfs[seleccionado], self.lista_pdfs[seleccionado - 1] = self.lista_pdfs[seleccionado - 1], self.lista_pdfs[seleccionado]
+            self.actualizar_lista()
+            self.ui.listWidget.setCurrentRow(seleccionado - 1)
+
+    def btn_abajo_click(self):
+        seleccionado = self.ui.listWidget.currentRow()
+        if seleccionado != self.ui.listWidget.count() - 1:
+            self.lista_pdfs[seleccionado], self.lista_pdfs[seleccionado + 1] = self.lista_pdfs[seleccionado + 1], self.lista_pdfs[seleccionado]
+            self.actualizar_lista()
+            self.ui.listWidget.setCurrentRow(seleccionado + 1)
+
     def btn_excel_click(self):
         self.ui.lbl_excel.setText("")
         filename = QtWidgets.QFileDialog.getOpenFileName(filter = "Excel (*.xlsx)")
@@ -179,6 +193,101 @@ class Aplicacion (object):
                 self.ui.btn_iniciar.setEnabled(False)
         except:
             pass
+    
+    def actualizar_lista(self):
+        self.ui.listWidget.clear()
+        for pdf in self.lista_pdfs:
+            pdf = pdf[::-1]
+            busca_barra = pdf.find("/")
+            pdf = pdf[:busca_barra]
+            pdf = pdf[::-1]
+            self.ui.listWidget.addItem(pdf)
+
+    def btn_cargar_pdfs_click(self):
+        filter = "PDF (*.pdf)"
+        names = QtWidgets.QFileDialog.getOpenFileNames(filter=filter, caption="Abir")
+        try:
+            if names[0]:
+
+                if len(names[0]) == 1:
+                    msg = QMessageBox()
+                    msg.setIcon(QMessageBox.Warning)
+                    msg.setText("Debe seleccionar al menos 2 pdfs")
+                    msg.setWindowTitle("Atención")
+                    msg.exec_()
+                    return
+
+                self.lista_pdfs = names[0]
+                self.actualizar_lista()
+                self.ui.btn_guardar.setEnabled(True)
+                self.ui.btn_arriba.setEnabled(True)
+                self.ui.btn_abajo.setEnabled(True)
+            else:
+                self.ui.btn_guardar.setEnabled(False)
+                self.ui.btn_unir.setEnabled(False)
+                self.ui.txt_nombre_archivo.setEnabled(False)
+                self.ui.txt_nombre_archivo.setText("")
+                self.ui.lbl_guardar_en.setText("")
+                self.ui.lbl_pdfs.setText("")
+
+        except TypeError:
+            pass
+
+    def btn_guardar_en_click(self):
+        
+        directory = QtWidgets.QFileDialog.getExistingDirectory(None, 'Seleccionar carpeta:', 'C:\\', QtWidgets.QFileDialog.ShowDirsOnly)
+
+        try:
+            if directory:
+                self.ui.lbl_guardar_en.setText(directory)
+                self.ui.btn_unir.setEnabled(True)
+                self.ui.txt_nombre_archivo.setEnabled(True)
+            else:
+                self.ui.btn_unir.setEnabled(False)
+                self.ui.txt_nombre_archivo.setEnabled(False)
+                self.ui.txt_nombre_archivo.setText("")
+                self.ui.lbl_guardar_en.setText("")
+        except TypeError:
+            pass
+    
+    def btn_unir_click(self):
+        if self.ui.txt_nombre_archivo.text() != "":
+            self.ui.lbl_informacion.setText("Cargando...")
+            pdf_writer = PdfFileWriter()
+            pagina = 0
+            for pdf in self.lista_pdfs:
+                pdf_reader = PdfFileReader(open(pdf, 'rb'))
+                cant_paginas = pdf_reader.getNumPages()
+
+                for i in range(cant_paginas):
+                    pdf_writer.addPage(pdf_reader.getPage(i))
+            
+            with open(self.ui.lbl_guardar_en.text() + '\\' + self.ui.txt_nombre_archivo.text() + '.pdf', 'wb') as doc_file:
+                pdf_writer.write(doc_file)
+
+            self.ui.lbl_informacion.setText("")
+            self.ui.listWidget.clear()
+            self.ui.lbl_guardar_en.setText("")
+            self.ui.txt_nombre_archivo.setText("")
+            self.ui.btn_guardar.setEnabled(False)
+            self.ui.btn_arriba.setEnabled(False)
+            self.ui.btn_abajo.setEnabled(False)
+            self.ui.btn_unir.setEnabled(False)
+            self.lista_pdfs = []
+            self.ui.txt_nombre_archivo.setEnabled(False)
+
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setText("Proceso finalizado con éxito.")
+            msg.setWindowTitle("Información")
+            msg.exec_()
+
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Warning)
+            msg.setText("Error: Debe escribir un nombre para el PDF.")
+            msg.setWindowTitle("Error")
+            msg.exec_()
 
 def main():
     app = QApplication.instance()
@@ -197,10 +306,20 @@ def main():
         ui.cant_intervalo.setEnabled(False)
         ui.txt_carpeta.setEnabled(False)
         ui.chkBox_excel.setEnabled(False)
+        ui.btn_guardar.setEnabled(False)
+        ui.btn_unir.setEnabled(False)
+        ui.txt_nombre_archivo.setEnabled(False)
+        ui.btn_unir.clicked.connect(apli.btn_unir_click)
         ui.cant_a_partir.valueChanged.connect(apli.lbl_cantidad_archivos_update)
         ui.cant_pag_a_recortar.valueChanged.connect(apli.lbl_cantidad_archivos_update)
         ui.cant_intervalo.valueChanged.connect(apli.lbl_cantidad_archivos_update)
         ui.chkBox_excel.stateChanged.connect(apli.chkBox_excel_click)
+        ui.btn_cargar_pdfs.clicked.connect(apli.btn_cargar_pdfs_click)
+        ui.btn_guardar.clicked.connect(apli.btn_guardar_en_click)
+        ui.btn_arriba.clicked.connect(apli.btn_arriba_click)
+        ui.btn_abajo.clicked.connect(apli.btn_abajo_click)
+        ui.btn_arriba.setEnabled(False)
+        ui.btn_abajo.setEnabled(False)
         app.exec_()
 
 
